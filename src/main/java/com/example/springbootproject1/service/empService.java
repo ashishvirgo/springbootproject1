@@ -29,5 +29,28 @@ public class empService {
         }
         return e;
     }
+    public employee addEmployee(employee emp1){
+        employeeList.add(emp1);
+        return emp1;
+    }
+    public employee updateEmployee(employee emp1){
+         for (employee ee:employeeList) {
+            if(ee.geteId()== emp1.geteId()){
+                ee.seteName(emp1.geteName());
+                ee.setSalary(emp1.getSalary());
+            }
+        }
+        return emp1;
+    }
+    public employee deleteEmployee(long eid){
+        employee e = null;
+        for (employee ee:employeeList) {
+            if(ee.geteId()==eid){
+               employeeList.remove(ee);
+               e=ee;
+            }
+        }
+        return e;
+    }
 
 }
